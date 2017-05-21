@@ -1,0 +1,22 @@
+{
+  "Html": "/Yuri/FranchiseOfficeJson.html",
+  "Name$": "",
+
+  "Street$": "",
+  "Number$": "",
+  "Zip$": "",
+  "City$": "",
+  "Country$": "",
+  "Address": "",
+  "SaveTrigger$": 0,
+
+  "HousesSold": 0,
+  "TotalCommision": 0,
+  "AvgCommision": 0,
+  "Trend": 0,
+
+  "Url": "",
+  "$Url": {
+    "Bind": "GetUrl"
+  }
+}

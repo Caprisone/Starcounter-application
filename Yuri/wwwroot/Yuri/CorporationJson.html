@@ -1,0 +1,65 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<style>
+    .corporation {
+        border: 1px solid #808080;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+        .corporation h2 {
+            margin-top: 0;
+        }
+
+    .bold {
+        font-weight: bold;
+    }
+</style>
+
+<template>
+    <template is="dom-bind">
+        <div class="corporation">
+
+            <h2>{{model.Name}}</h2>
+
+            <h3>Franchise offices</h3>
+
+            <h4>Sort on</h4>
+
+            <button value="{{model.SortHomesTrigger$::click}}" onmousedown="++this.value">Number of homes</button> -
+            <button value="{{model.SortTotalCommissionTrigger$::click}}" onmousedown="++this.value">Total commission</button> -
+            <button value="{{model.SortAvgCommissionTrigger$::click}}" onmousedown="++this.value">Average commission</button> -
+            <button value="{{model.SortTrendTrigger$::click}}" onmousedown="++this.value">Positive trend</button>
+
+            <div class="row bold">
+                <div class="col-md-2">Name</div>
+                <div class="col-md-2">Homes sold</div>
+                <div class="col-md-2">Total commission</div>
+                <div class="col-md-2">Average commision</div>
+                <div class="col-md-2">Trend</div>
+            </div>
+
+            <template is="dom-repeat" items="{{model.Offices}}">
+                <div class="row">
+                    <div class="col-md-2">
+                        <a href="{{item.Url}}">{{item.Name$}}</a>
+                    </div>
+                    <div class="col-md-2">{{item.HousesSold}}</div>
+                    <div class="col-md-2">{{item.TotalCommision}}</div>
+                    <div class="col-md-2">{{item.AvgCommision}}</div>
+                    <div class="col-md-2">{{item.Trend}}</div>
+                </div>
+            </template>
+
+            <h3>New franchise office</h3>
+            <fieldset>
+                <label>Name: </label>
+                <input value="{{model.NewOfficeName$::input}}">
+            </fieldset>
+
+            <button value="{{model.OfficeCreationTrigger$::click}}" onmousedown="++this.value">Create new</button>
+
+        </div>
+    </template>
+</template>
